@@ -1,0 +1,9 @@
+.card {
+  &-title {
+    font-weight: bold;
+    color: black;
+  }
+  &-sub {
+    color: hsl(214, 7%, 47%);
+  }
+}
