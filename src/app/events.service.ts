@@ -1,12 +1,24 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { of, Observable } from 'rxjs';
 import * as moment from 'moment';
 moment().format();
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { environment } from '../environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
 export class EventsService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
+
+  get(path: string, params: HttpParams = new HttpParams()): Observable<any> {
+    return this.http.get(`${environment.api_url}${path}`, { params }).pipe();
+  }
+
+  delete(path: string): Observable<any> {
+    return this.http.delete(`${environment.api_url}${path}`).pipe();
+  }
+
   eventSource$ = of([
     {
       title: 'Mumbai',

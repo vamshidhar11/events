@@ -82,7 +82,7 @@
     border-radius: 4px;
     border: 1px solid #eee;
     background-color: #fafafa;
-    height: 100px;
+    height: auto;
     width: 250px;
     margin: 0 8px 16px;
     padding: 10px;
@@ -217,14 +217,16 @@
 
   <div class="card-container">
     <a
-      *ngFor="let event of events.eventSource$ | async"
+      *ngFor="let event of calendarEvents"
       class="card"
       target="_blank"
       rel="noopener"
     >
-      <span class="card-title">{{ event.title }}</span>
+      <span class="card-title">{{ event.destination }}</span>
       <p class="card-sub">Start: {{ event.start | date: 'fullDate' }}</p>
       <p class="card-sub">End: {{ event.end | date: 'fullDate' }}</p>
+      <span class="card-title">{{ event.comment }}</span>
+      <a (click)="deleteEvent(event.id)"> Delete </a>
     </a>
   </div>
 
