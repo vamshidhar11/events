@@ -22,7 +22,7 @@
     "@angular/router": "~9.1.11",
     "@fullcalendar/angular": "^5.1.0",
     "@fullcalendar/daygrid": "^5.1.0",
-    "firebase-tools": "^8.4.3",
+    "firebase-tools": "^12.4.4",
     "g": "^2.0.1",
     "moment": "^2.27.0",
     "rxjs": "~6.5.5",
